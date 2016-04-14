@@ -27,10 +27,10 @@ for filename in os.listdir('./originals/'): #loops through originals folder to v
             height = int(SQUARE_FIT_SIZE)
         
 
-        print('Resizing %s...' % (filename))  #when program is running it prints that it is resizing the picture
-        im = im.resize((width, height))
+    print('Resizing %s...' % (filename))  #when program is running it prints that it is resizing the picture
+    im = im.resize((width, height))
 
-        print('Adding logo to %s...' % (filename))  #prints that it is adding the logo to the picture 
+    print('Adding logo to %s...' % (filename))  #prints that it is adding the logo to the picture 
 im.paste(logoIm, (width - logoWidth, height - logoHeight) , logoIm)
 
 im.save(os.path.join('withLogo', filename))  #saves the new picture with logo to the newly created directory/ folder withLogo
