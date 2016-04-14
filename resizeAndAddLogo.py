@@ -14,7 +14,7 @@ for filename in os.listdir('./originals/'): #loops through originals folder to v
     if not (filename.endswith('.png') or filename.endswith('.jpg')) \
         or filename == LOGO_FILENAME:
         continue
-    im = Image.open(os.path.join('./originals/' + filename))#opens the images inside of the originals folder 
+    im = Image.open(os.path.join('./originals/', filename))#opens the images inside of the originals folder 
     width, height = im.size  #assigns width and height to im.size
 
 
