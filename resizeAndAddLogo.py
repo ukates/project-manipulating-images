@@ -11,9 +11,9 @@ os.makedirs(os.path.join('withLogo'), exist_ok=True) #creates folder titled with
 
 
 for filename in os.listdir('./originals/'): #loops through originals folder to view the contents inside
-    if not (filename.endswith('.png') or filename.endswith('.jpg')) \
-        or filename == LOGO_FILENAME:
+    if not (filename.endswith('.png') or filename.endswith('.jpg')) or filename == LOGO_FILENAME:
         continue
+
     im = Image.open(os.path.join('./originals/', filename))#opens the images inside of the originals folder 
     width, height = im.size  #assigns width and height to im.size
 
@@ -33,7 +33,7 @@ for filename in os.listdir('./originals/'): #loops through originals folder to v
         print('Adding logo to %s...' % (filename))  #prints that it is adding the logo to the picture 
         im.paste(logoIm, (width - logoWidth, height - logoHeight) , logoIm)
 
-    im.save(os.path.join('withLogo', filename))  #saves the new picture with logo to the newly created directory/ folder withLogo
+        im.save(os.path.join('withLogo', filename))  #saves the new picture with logo to the newly created directory/ folder withLogo
 
 
 
