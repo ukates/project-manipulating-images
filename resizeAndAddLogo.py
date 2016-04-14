@@ -21,10 +21,10 @@ for filename in os.listdir('./originals/'): #loops through originals folder to v
     if width > SQUARE_FIT_SIZE and height > SQUARE_FIT_SIZE:  #if picture is too big this will resize the picture to fit within the guidelines set to square_fit_size, which in this case is 300
         if width > height:
             height = int((SQUARE_FIT_SIZE / width) * height) 
-            width = SQUARE_FIT_SIZE
+            width = int(SQUARE_FIT_SIZE)
         else:
             width = int((SQUARE_FIT_SIZE / height) * width)
-            height = SQUARE_FIT_SIZE
+            height = int(SQUARE_FIT_SIZE)
         
 
     print('Resizing %s...' % (filename))  #when program is running it prints that it is resizing the picture
