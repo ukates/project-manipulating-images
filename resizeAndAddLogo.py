@@ -7,6 +7,7 @@ LOGO_FILENAME = 'logo.png'
 logoIm = Image.open( LOGO_FILENAME )
 logoWidth, logoHeight = logoIm.size
 
+
 os.makedirs('withLogo', exist_ok=True) #creates folder titled withLogo that will work accross multiple OS
 
 
@@ -14,7 +15,7 @@ for filename in os.listdir('originals'): #loops through originals folder to view
     if not (filename.endswith('.png') or filename.endswith('.jpg')) or filename == LOGO_FILENAME:
          continue
 
-    im = Image.open(os.path.join('originals', filename))#opens the images inside of the originals folder 
+    im = Image.open(os.path.join('originals', (filename)))#opens the images inside of the originals folder 
     width, height = im.size  #assigns width and height to im.size
 
 
