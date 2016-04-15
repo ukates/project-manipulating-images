@@ -7,7 +7,7 @@ LOGO_FILENAME = 'logo.png'
 logoIm = Image.open( LOGO_FILENAME )
 logoWidth, logoHeight = logoIm.size
 
-os.makedirs(os.path.join('withLogo'), exist_ok=True) #creates folder titled withLogo that will work accross multiple OS
+os.makedirs('withLogo', exist_ok=True) #creates folder titled withLogo that will work accross multiple OS
 
 
 for filename in os.listdir('originals'): #loops through originals folder to view the contents inside
@@ -21,10 +21,10 @@ for filename in os.listdir('originals'): #loops through originals folder to view
     if width > SQUARE_FIT_SIZE and height > SQUARE_FIT_SIZE:  #if picture is too big this will resize the picture to fit within the guidelines set to square_fit_size, which in this case is 300
         if width > height:
             height = int((SQUARE_FIT_SIZE / width) * height) 
-            width = int(SQUARE_FIT_SIZE)
+            width = SQUARE_FIT_SIZE
         else:
             width = int((SQUARE_FIT_SIZE / height) * width)
-            height = int(SQUARE_FIT_SIZE)
+            height = SQUARE_FIT_SIZE
         
 
     print('Resizing %s...' % (filename))  #when program is running it prints that it is resizing the picture
